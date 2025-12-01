@@ -1,8 +1,8 @@
 #include "pesquisa.h"
 #include "Acesso_Sequencial_Indexado.h"
-#include "arvoreBinaria.h"
-#include "arvoreB.h"
-#include "arvoreB_e.h"
+//#include "arvoreBinaria.h"
+//#include "arvoreB.h"
+//#include "arvoreB_e.h"
 
 /*
  * Programa principal responsável por:
@@ -101,7 +101,7 @@ int main(int argc, char *argv[]) {
             encontrado = ASI(arquivo, quantidade, chave, &x, &analise1, &analise2);
             break;
 
-        case 2: // Árvore Binária
+       /* case 2: // Árvore Binária
             encontrado = ABP(arquivo, quantidade, chave, &x, &analise1, &analise2);
             break;
 
@@ -112,9 +112,9 @@ int main(int argc, char *argv[]) {
         case 4: // Árvore B*
             encontrado = ABE(arquivo, quantidade, &x, chave, &analise1, &analise2);
             break;
-
+        */
         default:
-            printf("Método inválido!\n");
+            printf("Metodo invalido!\n");
             fclose(arquivo);
             return 1;
     }
@@ -127,17 +127,17 @@ int main(int argc, char *argv[]) {
         printf("Chave: %d\nDado1: %ld\nDado2: %s\n",
                x.chave, x.dado1, x.dado2);
     } else {
-        printf("\nItem NÃO encontrado!\n");
+        printf("\nItem NAO encontrado!\n");
     }
 
-    printf("\n==== PRÉ-PROCESSAMENTO ====\n");
-    printf("Comparações: %d\n", analise1.comparacoes);
-    printf("Transferências: %d\n", analise1.transeferencia);
+    printf("\n==== PRE-PROCESSAMENTO ====\n");
+    printf("Comparacoes: %d\n", analise1.comparacoes);
+    printf("Transferencias: %d\n", analise1.transeferencia);
     printf("Tempo: %.6lf s\n", analise1.tempo);
 
     printf("\n======= PESQUISA =======\n");
-    printf("Comparações: %d\n", analise2.comparacoes);
-    printf("Transferências: %d\n", analise2.transeferencia);
+    printf("Comparacoes: %d\n", analise2.comparacoes);
+    printf("Transferencias: %d\n", analise2.transeferencia);
     printf("Tempo: %.6lf s\n", analise2.tempo);
 
     fclose(arquivo);

@@ -19,16 +19,14 @@
  *   - "descendente"
  */
 
-#define NUM_REGISTROS 1000000  // Total de registros gerados
-#define TAM_DADO2 1000         // Tamanho da string dado2
-#define TAM_DADO3 5000         // Tamanho da string dado3
+#define NUM_REGISTROS 1000000  // Total de registros gerados     
+#define TAM_DADO2 5000         // Tamanho da string dado3
 
 // Estrutura usada para gerar os registros binários
 typedef struct {
     int chave;
     long int dado1;
-    char dado2[TAM_DADO2 + 1]; // +1 para '\0'
-    char dado3[TAM_DADO3 + 1];
+    char dado2[TAM_DADO2 + 1];// +1 para '\0'
 } TipoRegistro;
 
 
@@ -137,7 +135,6 @@ int main(int argc, char *argv[]) {
         reg.dado1 = ((long)rand() << 16) | rand();
 
         gerar_string_aleatoria(reg.dado2, TAM_DADO2);
-        gerar_string_aleatoria(reg.dado3, TAM_DADO3);
 
         fwrite(&reg, sizeof(TipoRegistro), 1, arquivo);
 

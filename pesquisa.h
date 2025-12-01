@@ -16,11 +16,11 @@
 #define ITENSPAGINA 50
 
 // Tamanho máximo da tabela de índices do ASI
-#define MAXTABELA 1000
+#define MAXTABELA 10000
 
 // Tamanhos dos campos de string dos registros
 #define TAM_DADO2 5000
-//#define TAM_DADO3 5000
+
 
 /*
  * ====== CONSTANTES E ESTRUTURAS PARA ÁRVORE B ======
@@ -48,7 +48,6 @@ typedef struct {
 typedef struct {
     int chave;                       // chave usada na busca
     long int dado1;                  // dado simples numérico
-   // char dado2[TAM_DADO2 + 1];       // string grande
     char dado2[TAM_DADO2 + 1];       // string MUITO grande
 } TipoItem;
 
